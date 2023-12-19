@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "no-console": "warn",
+    "global-require": "off",
+    "import/no-dynamic-require": "off"
+  }
+}
