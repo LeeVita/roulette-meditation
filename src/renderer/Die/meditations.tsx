@@ -1,43 +1,4 @@
-/* eslint-disable import/prefer-default-export */
-/* eslint-disable no-use-before-define */
-import React, { useCallback, useState } from 'react';
-
-export function Die() {
-  const [gotMeditation, setMeditation] = useState<Meditation | null>(null);
-
-  const sortMeditaions = useCallback(() => {
-    const n = meditations.length;
-
-    const index = Math.floor(Math.random() * n);
-
-    setMeditation(meditations[index]);
-  }, [setMeditation]);
-
-  return (
-    <div>
-      <h1>Próxima meditação</h1>
-      <div className="Hello">
-        <button type="button" onClick={sortMeditaions}>
-          <span role="img" aria-label="folded hands">
-            🎲
-          </span>
-          Sortear
-        </button>
-      </div>
-      <div className="Hello">
-        {gotMeditation ? (
-          <div className="Result">
-            <div className="name">{gotMeditation.name}</div>
-            <div className="description">{gotMeditation.description}</div>
-          </div>
-        ) : (
-          ``
-        )}
-      </div>
-    </div>
-  );
-}
-
+import { JSX } from 'react';
 const meditations: Meditation[] = [
   {
     type: 'visualization',
@@ -133,8 +94,10 @@ const meditations: Meditation[] = [
   },
 ];
 
-type Meditation = {
+export type Meditation = {
   type: 'visualization' | 'audio';
   name: string;
-  description: React.JSX.Element | string;
+  description: JSX.Element | string;
 };
+
+export default meditations;

@@ -1,0 +1,29 @@
+.roulette {
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+
+  .content {
+    margin: 2rem 1rem;
+
+    .result {
+      border: 1px solid white;
+      border-radius: 1rem;
+
+      > * {
+        padding: 0.6rem 1rem;
+      }
+      .name {
+        border-radius: 1rem;
+        font-size: 1.2rem;
+        font-family: 'TW Cen MT', sans-serif;
+        background: #7a2c9e;
+      }
+      .description {
+        font-size: 0.9rem;
+        font-family: 'sitka display', serif;
+      }
+    }
+  }
+}

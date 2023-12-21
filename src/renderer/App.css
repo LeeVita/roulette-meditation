@@ -1,34 +1,59 @@
-/*
- * @NOTE: Prepend a `~` to css file paths that are in your node_modules
- *        See https://github.com/webpack-contrib/sass-loader#imports
- */
+html {
+  font-size: min(5vw, 4.5vh);
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    background-color: #7a2c9e;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #dd578999;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #7a2c9e;
+    border: 3px solid #dd578999;
+    border-radius: 0.5em;
+  }
+}
+
 body {
   position: relative;
   color: white;
-  height: 100vh;
+  min-height: 90vh;
+  margin: 10vh 0 0;
   background: linear-gradient(
     200.96deg,
     #fedc2a -29.09%,
     #dd5789 51.77%,
     #7a2c9e 129.35%
   );
-  font-family: 'Gill Sans', Calibri, sans-serif;
+  font-family: 'TW Cen MT', 'Gill Sans', sans-serif;
   overflow-y: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+  font-family: Comfortaa;
+}
+h1 {
+  font-size: 1.4rem;
 }
 
 button {
   background-color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
   border: none;
   appearance: none;
-  font-size: 1.3rem;
+  font-size: 1rem;
   box-shadow:
-    0px 8px 28px -6px rgba(24, 39, 75, 0.12),
-    0px 18px 88px -4px rgba(24, 39, 75, 0.14);
+    0 0.4rem 1.5rem -0.5rem rgba(24, 39, 75, 0.12),
+    0 0.6rem 3rem -0.3rem rgba(24, 39, 75, 0.14);
   transition: all ease-in 0.1s;
   cursor: pointer;
   opacity: 0.9;
@@ -47,33 +72,10 @@ a {
   text-decoration: none;
   height: fit-content;
   width: fit-content;
-  margin: 10px;
+  margin: 0.6rem;
 }
 
 a:hover {
   opacity: 1;
   text-decoration: none;
-}
-
-.Hello {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
-}
-
-.Result {
-  border: 1px solid white;
-  margin: 5px;
-  > * {
-    padding: 10px 15px;
-  }
-  .name {
-    font-size: 32px;
-    background: purple;
-  }
-}
-
-h1 {
-  text-align: center;
 }

@@ -51,14 +51,17 @@ const createWindow = async () => {
     return path.join(RESOURCES_PATH, ...paths);
   };
 
+  const devTools = true;
+
   mainWindow = new BrowserWindow({
     show: false,
-    width: 1024,
-    height: 728,
+    width: devTools ? 1000 : 500,
+    height: 600,
     // frame: false,
     autoHideMenuBar: true,
     icon: getAssetPath('icon.png'),
     webPreferences: {
+      devTools,
       preload: app.isPackaged
         ? path.join(__dirname, 'preload.js')
         : path.join(__dirname, '../../.erb/dll/preload.js'),
