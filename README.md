@@ -9,7 +9,7 @@
 Clone the repo and install dependencies:
 
 ```bash
-git clone git@gitlab.com:vita-lee/roulette-meditation.git
+git clone git@github.com:LeeVita/roulette-meditation.git
 cd roulette-meditation
 npm install
 ```
