@@ -51,7 +51,7 @@ const createWindow = async () => {
     return path.join(RESOURCES_PATH, ...paths);
   };
 
-  const devTools = true;
+  const devTools = !app.isPackaged && true;
 
   mainWindow = new BrowserWindow({
     show: false,
