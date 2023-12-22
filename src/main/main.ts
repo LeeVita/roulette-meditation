@@ -2,8 +2,18 @@
 
 import path from 'path';
 import { app, BrowserWindow, shell, ipcMain } from 'electron';
-
+import { autoUpdater } from 'electron-updater';
+import log from 'electron-log';
 import { resolveHtmlPath } from './util';
+
+class AppUpdater {
+  constructor() {
+    log.transports.file.level = 'info';
+    autoUpdater.logger = log;
+
+    autoUpdater.checkForUpdatesAndNotify();
+  }
+}
 
 let mainWindow: BrowserWindow | null = null;
 
@@ -89,6 +99,9 @@ const createWindow = async () => {
     shell.openExternal(edata.url);
     return { action: 'deny' };
   });
+
+  // eslint-disable-next-line
+  new AppUpdater();
 };
 
 app.on('window-all-closed', () => {
