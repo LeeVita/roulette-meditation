@@ -10,6 +10,7 @@ class AppUpdater {
   constructor() {
     log.transports.file.level = 'info';
     autoUpdater.logger = log;
+    autoUpdater.allowDowngrade = true;
 
     autoUpdater.checkForUpdatesAndNotify();
   }
@@ -61,11 +62,11 @@ const createWindow = async () => {
     return path.join(RESOURCES_PATH, ...paths);
   };
 
-  const devTools = !app.isPackaged && true;
+  const devTools = !app.isPackaged && false;
 
   mainWindow = new BrowserWindow({
     show: false,
-    width: devTools ? 1000 : 500,
+    width: devTools ? 1000 : 600,
     height: 600,
     // frame: false,
     autoHideMenuBar: true,
