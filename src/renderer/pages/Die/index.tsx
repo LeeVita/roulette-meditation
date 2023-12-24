@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable no-use-before-define */
 import { useCallback, useState } from 'react';
-import meditations, { Meditation } from './meditations';
+import meditations, { Meditation } from '../../meditations';
 
 import './index.scss';
 

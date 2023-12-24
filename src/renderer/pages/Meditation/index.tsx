@@ -1,21 +1,25 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useCallback, useState } from 'react';
 
 import MeditationList from './list';
-import MeditationEdit from './edit';
+import MeditationDetail from './detail';
 
-type tMode = 'list' | 'edit';
+import './style.scss';
 
 export default function Meditation() {
-  const [mode, setMode] = useState<tMode>('list');
+  const [meditationId, setMeditationId] = useState<number | null>(null);
 
-  const switchMode = useCallback(() => {
-    const newMode = mode === 'list' ? 'edit' : 'list';
-    setMode(newMode);
-  }, [setMode, mode]);
+  const clearDetail = useCallback(() => {
+    setMeditationId(null);
+  }, []);
 
   return (
-    <div className="content-page center" onClick={switchMode}>
-      {mode === 'list' ? <MeditationList /> : <MeditationEdit />}
+    <div className="content-page center">
+      {meditationId ? (
+        <MeditationDetail meditationId={meditationId} goBack={clearDetail} />
+      ) : (
+        <MeditationList selectToDetail={setMeditationId} />
+      )}
     </div>
   );
 }

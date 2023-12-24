@@ -2,6 +2,7 @@ import { JSX } from 'react';
 
 const meditations: Meditation[] = [
   {
+    id: 1,
     type: 'visualization',
     name: 'Pulsar frontal',
     description: (
@@ -15,6 +16,7 @@ const meditations: Meditation[] = [
     ),
   },
   {
+    id: 2,
     type: 'visualization',
     name: 'Respiração pelos 3 dedos',
     description: (
@@ -29,6 +31,7 @@ const meditations: Meditation[] = [
     ),
   },
   {
+    id: 3,
     type: 'visualization',
     name: '5 esferas verdes',
     description: (
@@ -43,6 +46,7 @@ const meditations: Meditation[] = [
     ),
   },
   {
+    id: 4,
     type: 'visualization',
     name: 'Esfera luminosa',
     description: (
@@ -65,6 +69,7 @@ const meditations: Meditation[] = [
     ),
   },
   {
+    id: 5,
     type: 'visualization',
     name: 'Descarregar energias pesadas do corpo',
     description: (
@@ -82,6 +87,7 @@ const meditations: Meditation[] = [
     ),
   },
   {
+    id: 6,
     type: 'audio',
     name: 'Frequencia Vishudha',
     description: (
@@ -96,6 +102,7 @@ const meditations: Meditation[] = [
 ];
 
 export type Meditation = {
+  id: number;
   type: 'visualization' | 'audio';
   name: string;
   description: JSX.Element | string;
