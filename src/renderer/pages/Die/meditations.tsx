@@ -1,4 +1,5 @@
 import { JSX } from 'react';
+
 const meditations: Meditation[] = [
   {
     type: 'visualization',

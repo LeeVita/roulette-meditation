@@ -3,7 +3,7 @@
 import { useCallback, useState } from 'react';
 import meditations, { Meditation } from './meditations';
 
-import './index.css';
+import './index.scss';
 
 export function Die() {
   const [gotMeditation, setMeditation] = useState<Meditation | null>(null);
