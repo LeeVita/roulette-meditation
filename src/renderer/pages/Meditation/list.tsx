@@ -1,16 +1,18 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useCallback } from 'react';
-import meditations from '../../meditations';
+import { Meditation } from '../../meditations';
 
 export default function MeditationList({
-  selectToDetail,
+  setDetail: selectToDetail,
+  list: meditations,
 }: {
-  selectToDetail: (id: number | null) => void;
+  setDetail: (meditation: Meditation | null) => void;
+  list: Meditation[];
 }) {
   const editItem = useCallback(
-    (id: number) => {
-      selectToDetail(id);
+    (meditation: Meditation) => {
+      selectToDetail(meditation);
     },
     [selectToDetail],
   );
@@ -25,7 +27,7 @@ export default function MeditationList({
             <li
               className="meditation-list-item"
               key={meditation.id}
-              onClick={() => editItem(meditation.id)}
+              onClick={() => editItem(meditation)}
             >
               {meditation.name}
             </li>

@@ -29,3 +29,54 @@
   font-size: 0.8rem;
   font-family: 'sitka display', serif;
 }
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+
+  input,
+  textarea,
+  button {
+    display: block;
+    padding: 0.8vw 2vw;
+    width: -webkit-fill-available;
+    border: 0.2vw solid $color-1;
+    border-radius: 0.8vw;
+    color: $color-3;
+  }
+
+  input,
+  textarea {
+    margin: 2vw 2vw 0;
+    width: -webkit-fill-available;
+    background-color: #fff6;
+    font: 0.6rem sans-serif;
+  }
+
+  textarea {
+    min-height: 20vh;
+    height: 35vh;
+    padding-top: 1.4vw;
+    resize: vertical;
+  }
+
+  button {
+    margin: 2vw;
+    padding: 2vw 4vw;
+    font-size: 0.8rem;
+    &:hover {
+      transform: none;
+      background: $color-3;
+      color: $color-1;
+    }
+  }
+
+  input[disabled] {
+    cursor: not-allowed;
+    color: $color-2;
+    background: $color-2 #fff6;
+    border-color: $color-2;
+  }
+}

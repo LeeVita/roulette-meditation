@@ -101,8 +101,9 @@ const createWindow = async () => {
     return { action: 'deny' };
   });
 
-  // eslint-disable-next-line
-  new AppUpdater();
+  if (app.isPackaged)
+    // eslint-disable-next-line
+    new AppUpdater();
 };
 
 app.on('window-all-closed', () => {

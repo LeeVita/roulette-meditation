@@ -1,17 +1,14 @@
-import { useMemo } from 'react';
-import meditations from '../../meditations';
+import { useState } from 'react';
+import { Meditation } from '../../meditations';
 
 export default function MeditationDetail({
-  meditationId,
+  meditation,
   goBack,
 }: {
-  meditationId: number | null;
+  meditation: Meditation | null;
   goBack: () => void;
 }) {
-  const meditation = useMemo(
-    () => meditations.find((m) => m.id === meditationId),
-    [meditationId],
-  );
+  const [editing, setEditing] = useState<boolean>(false);
 
   return (
     <>
@@ -26,10 +23,25 @@ export default function MeditationDetail({
       </button>
       <h1>Detalhes da meditação</h1>
 
-      <div>
+      <div hidden={editing}>
         <div className="detail-name">{meditation?.name}</div>
         <div className="detail-type">{meditation?.type}</div>
         <div className="detail-description">{meditation?.description}</div>
+        <button type="button" onClick={() => setEditing(true)}>
+          Editar
+        </button>
+      </div>
+
+      <div hidden={!editing}>
+        <form>
+          <input type="text" value={meditation?.name} />
+          <input type="text" value={meditation?.type} disabled />
+          <textarea value={meditation?.description} />
+
+          <button type="submit" onClick={() => setEditing(true)}>
+            Salvar
+          </button>
+        </form>
       </div>
     </>
   );
