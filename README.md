@@ -14,6 +14,8 @@ cd roulette-meditation
 npm install
 ```
 
+Copy and paste env_example.js file and and rename for env.js and fill the values
+
 ## Starting Development
 
 Start the app in the `dev` environment:
